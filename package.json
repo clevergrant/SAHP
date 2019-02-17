@@ -1,0 +1,27 @@
+{
+	"name": "sahp",
+	"version": "0.0.1",
+	"description": "Simple As Humanly Possible - CMS",
+	"main": "index.js",
+	"repository": "git@github.com:clevergrant/sahp.git",
+	"author": "clevergrant <clevergrant@gmail.com>",
+	"license": "Unlicense",
+	"private": false,
+	"scripts": {
+		"client": "cd client && yarn start",
+		"server": "nodemon --exec babel-node server",
+		"dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
+		"start": "babel-node server",
+		"heroku-postbuild": "cd client && yarn && yarn --only=dev --no-shrinkwrap && yarn build"
+	},
+	"dependencies": {
+		"body-parser": "^1.18.3",
+		"express": "^4.16.4"
+	},
+	"devDependencies": {
+		"concurrently": "^4.1.0",
+		"@babel/core": "^7.3.3",
+		"@babel/node": "^7.2.2",
+		"@babel/preset-env": "^7.3.1"
+	}
+}
