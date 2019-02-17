@@ -9,9 +9,9 @@
 	"private": false,
 	"scripts": {
 		"client": "cd client && yarn start",
-		"server": "nodemon --exec babel-node server",
+		"server": "nodemon --exec babel-node api",
 		"dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
-		"start": "babel-node server",
+		"start": "babel-node api",
 		"heroku-postbuild": "cd client && yarn && yarn --only=dev --no-shrinkwrap && yarn build"
 	},
 	"dependencies": {
